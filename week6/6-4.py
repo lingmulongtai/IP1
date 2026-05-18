@@ -1,7 +1,7 @@
 """Week 6 exercise 4: Koch snowflake."""
 
+import math
 import turtle
-
 
 def koch(x):
     if x < 3:
@@ -23,7 +23,17 @@ def snowflake(length):
 
 
 if __name__ == "__main__":
+    length = 300
+    screen = turtle.Screen()
+    screen.tracer(0)
+    screen.delay(0)
     turtle.speed(0)
     turtle.hideturtle()
-    snowflake(300)
+    # Three Koch sides form an equilateral triangle; its centroid is at the origin.
+    turtle.penup()
+    turtle.goto(-length / 2, length * math.sqrt(3) / 6)
+    turtle.setheading(0)
+    turtle.pendown()
+    snowflake(length)
+    screen.update()
     turtle.done()
