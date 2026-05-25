@@ -1,21 +1,20 @@
 """Week 7 exercise 4: Newton's method for square roots."""
 
 
-def newton(n, epsilon):
+def newton(n, epsilon=0.0000001):
     s = n / 2
+
     while abs(s * s - n) >= n * epsilon:
         s = (s + n / s) / 2
+
     return s
 
 
 if __name__ == "__main__":
-    print("--- 4.1 style (exact stop, n=100) ---")
-    s = 100 / 2
-    while s * s != 100:
-        s = (s + 100 / s) / 2
-    print(s)
+    print("--- 4.1: newton(100) ---")
+    print(newton(100))
 
-    print("--- 4.2-4.4: newton(n, epsilon), relative error ---")
+    print("--- 4.2-4.4: newton(n, epsilon) ---")
     for n in [1, 2, 10, 100]:
         print(n, newton(n, 0.00001))
 
