@@ -30,3 +30,4 @@ if __name__ == "__main__":
     print("sumOfCount(0..9):", [sumOfCount(n) for n in range(10)])
     print("fibonacci(1..12):", [fibonacci(n) for n in range(1, 13)])
     print("gcd(24, 42) =", gcd(24, 42))
+

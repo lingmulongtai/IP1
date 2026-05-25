@@ -25,8 +25,7 @@ def snowflake(length):
 if __name__ == "__main__":
     length = 300
     screen = turtle.Screen()
-    screen.tracer(0)
-    screen.delay(0)
+    screen.tracer(100, 0)
     turtle.speed(0)
     turtle.hideturtle()
     # Three Koch sides form an equilateral triangle; its centroid is at the origin.
