@@ -4,10 +4,9 @@
 def factorial(n):
     print("factorial", n)
     if n == 0:
-        print("returning result")
         return 1
     result = n * factorial(n - 1)
-    print("returning result")
+    print("returning result", result)
     return result
 
 

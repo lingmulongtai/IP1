@@ -4,7 +4,7 @@
 def newton(n, epsilon=0.0000001):
     s = n / 2
 
-    while abs(s * s - n) >= n * epsilon:
+    while abs(s * s - n) >= epsilon:
         s = (s + n / s) / 2
 
     return s

@@ -29,7 +29,7 @@ if __name__ == "__main__":
     msg = "This is a message that has been encoded."
     encoded = rotate(msg, 13)
     print(encoded)
-    print(rotate(encoded, -13) == msg)
+    print(rotate(encoded, +13))
 
     s = "hello"
-    print(rotate(rotate(s, 5), -5) == s)
+    print(rotate(rotate(s, 5), -5))
