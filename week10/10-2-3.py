@@ -29,15 +29,22 @@ def duplicate_percentage(n, trials=100000):
 if __name__ == "__main__":
     trials = 100000
 
-    for n in range(1, 50):
-        pct = duplicate_percentage(n, trials)
-        print(f"n={n}: {pct:.1f}%")
+    for n in [22, 23, 40, 41]:
+        print(f"n={n}: {duplicate_percentage(n, trials):.1f}%")
 
-    print()
-    for n in range(1, 50):
-        if duplicate_percentage(n, trials) >= 50:
-            print(f"Minimum n for at least 50%: {n}")
+    min_50 = None
+    min_90 = None
+    for n in range(1, 70):
+        pct = duplicate_percentage(n, trials)
+        if min_50 is None and pct >= 50:
+            min_50 = n
+        if min_90 is None and pct >= 90:
+            min_90 = n
+        if min_50 is not None and min_90 is not None:
             break
 
-    print(f"50% chance of shared birthday: about 23 people")
-    print(f"90% chance of shared birthday: about 41 people")
+    print()
+    print(f"Minimum n for at least 50%: {min_50}")
+    print(f"Minimum n for at least 90%: {min_90}")
+    print(f"About {min_50} people for a 50% chance of a shared birthday")
+    print(f"About {min_90} people for a 90% chance of a shared birthday")
