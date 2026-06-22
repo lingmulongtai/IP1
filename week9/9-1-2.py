@@ -1,5 +1,7 @@
 """Week 9 exercise 1.2: count words in words.txt that avoid forbidden letters."""
 
+from pathlib import Path
+
 
 def avoids(word, letters):
     for ch in letters:
@@ -10,7 +12,8 @@ def avoids(word, letters):
 
 def count_avoiding(forbidden):
     count = 0
-    with open("words.txt") as words:
+    words_path = Path(__file__).with_name("words.txt")
+    with words_path.open() as words:
         for line in words:
             if avoids(line.strip(), forbidden):
                 count = count + 1

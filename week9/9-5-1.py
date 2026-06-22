@@ -1,8 +1,11 @@
 """Week 9 challenge 5.1: count words in text.txt."""
 
+from pathlib import Path
+
 if __name__ == "__main__":
     count = 0
-    with open("text.txt") as text:
+    text_path = Path(__file__).with_name("text.txt")
+    with text_path.open() as text:
         for line in text:
             in_word = False
             for ch in line:

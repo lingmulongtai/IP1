@@ -1,8 +1,11 @@
 """Week 9 exercise 4.2: histogram of letter frequencies in words.txt."""
 
+from pathlib import Path
+
 if __name__ == "__main__":
+    words_path = Path(__file__).with_name("words.txt")
     for letter in "abcdefghijklmnopqrstuvwxyz":
-        words = open("words.txt")
+        words = words_path.open()
         count = 0
         for line in words:
             word = line.strip()
