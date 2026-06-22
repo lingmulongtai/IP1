@@ -1,5 +1,7 @@
 """Week 10 challenge 4.2: find three-way interlocking word triples."""
 
+from pathlib import Path
+
 
 def includes(sequence, target):
     first = 0
@@ -18,7 +20,8 @@ def includes(sequence, target):
 
 if __name__ == "__main__":
     words = []
-    with open("words.txt") as f:
+    words_path = Path(__file__).with_name("words.txt")
+    with words_path.open() as f:
         for line in f:
             words.append(line.strip())
 
