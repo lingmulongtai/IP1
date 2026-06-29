@@ -15,3 +15,6 @@ def nested_sum(n):
 
 if __name__ == "__main__":
     print(nested_sum([None, 1, [2, "two", [[[[3, False, 4]]]], []], 5]))
+
+
+#FalseはPythonで特殊だが、このコードは type(False) is int ではなく bool になるので、整数として足されない。
