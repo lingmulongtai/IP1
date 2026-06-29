@@ -2,6 +2,7 @@
 
 
 def has_duplicates(l):
+    # 先に並べ替えると、同じ値があれば必ず隣同士になる。
     sorted_l = sorted(l)
     for i in range(len(sorted_l) - 1):
         if sorted_l[i] == sorted_l[i + 1]:
@@ -11,7 +12,7 @@ def has_duplicates(l):
 
 if __name__ == "__main__":
     print(has_duplicates([1, 2, 3]))     # False
-    print(has_duplicates([1, 1, 2, 3])) # True
-    print(has_duplicates([1, 2, 2, 3])) # True
-    print(has_duplicates([1, 2, 3, 3])) # True
-    print(has_duplicates([1, 2, 3, 1])) # True
+    print(has_duplicates([1, 1, 2, 3]))  # True
+    print(has_duplicates([1, 2, 2, 3]))  # True
+    print(has_duplicates([1, 2, 3, 3]))  # True
+    print(has_duplicates([1, 2, 3, 1]))  # True

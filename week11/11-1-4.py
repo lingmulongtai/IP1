@@ -4,6 +4,7 @@
 def histogram(seq):
     d = dict()
     for item in seq:
+        # get(item, 0)で「まだ無ければ0回」を一行で書ける。
         d[item] = d.get(item, 0) + 1
     return d
 

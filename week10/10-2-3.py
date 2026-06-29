@@ -5,12 +5,14 @@ from random import randint
 
 def randlist(n, i, j):
     result = []
+    # 誕生日を1から365の数字としてランダムに作るための部品。
     for _ in range(n):
         result.append(randint(i, j))
     return result
 
 
 def has_duplicates(l):
+    # 誕生日がかぶったかどうかは、並べ替えて隣を比べれば分かる。
     sorted_l = sorted(l)
     for i in range(len(sorted_l) - 1):
         if sorted_l[i] == sorted_l[i + 1]:
@@ -20,6 +22,7 @@ def has_duplicates(l):
 
 def duplicate_percentage(n, trials=100000):
     count = 0
+    # 1回の結果ではぶれるので、たくさん試して割合にする。
     for _ in range(trials):
         if has_duplicates(randlist(n, 1, 365)):
             count = count + 1
@@ -34,6 +37,7 @@ if __name__ == "__main__":
 
     min_50 = None
     min_90 = None
+    # 小さい人数から順に試して、初めて条件を超えた人数を覚える。
     for n in range(1, 70):
         pct = duplicate_percentage(n, trials)
         if min_50 is None and pct >= 50:

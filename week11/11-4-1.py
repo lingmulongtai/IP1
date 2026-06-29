@@ -2,6 +2,7 @@
 
 
 def isLetter(c):
+    # 単語の区切りに必要な空白だけは、文字ではなくても残す。
     return c.isalpha() or c.isspace()
 
 

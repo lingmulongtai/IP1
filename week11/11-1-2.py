@@ -4,6 +4,7 @@
 def histogram(seq):
     d = dict()
     for item in seq:
+        # 1.1と同じ数え方。後で並べて表示するために辞書で持つ。
         if item not in d:
             d[item] = 0
         d[item] = d[item] + 1
@@ -11,6 +12,7 @@ def histogram(seq):
 
 
 def printAscending(d):
+    # sorted(d)は辞書のキーだけを昇順に並べてくれる。
     for key in sorted(d):
         print(key, d[key])
 

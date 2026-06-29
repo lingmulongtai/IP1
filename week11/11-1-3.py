@@ -4,6 +4,7 @@
 def histogram(seq):
     d = dict()
     for item in seq:
+        # 文字をキー、出てきた回数を値として記録する。
         if item not in d:
             d[item] = 0
         d[item] = d[item] + 1
@@ -12,6 +13,7 @@ def histogram(seq):
 
 def printHistogram(d):
     for key in sorted(d):
+        # 回数ぶんだけ*をくり返すと、簡単な棒グラフになる。
         print(key, "*" * d[key])
 
 

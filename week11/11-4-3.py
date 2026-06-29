@@ -1,9 +1,8 @@
 """Week 11 exercise 4.3: make a histogram of words in a file."""
 
-from pathlib import Path
-
 
 def isLetter(c):
+    # depunctuateで使う判定。空白を残すとsplitしやすい。
     return c.isalpha() or c.isspace()
 
 
@@ -18,11 +17,13 @@ def printAscending(d):
 
 if __name__ == "__main__":
     h = dict()
-    text_path = Path(__file__).with_name("text2.txt")
-    with text_path.open() as f:
+    # この.pyファイルと同じ場所にあるtext2.txtを開く。
+    with open(__file__.replace("11-4-3.py", "text2.txt")) as f:
         for line in f:
+            # 先に記号を消してから、単語ごとのリストに分ける。
             line = depunctuate(line)
             for word in line.split():
+                # Doとdoを別単語にしないため、小文字にそろえる。
                 word = word.lower()
                 h[word] = h.get(word, 0) + 1
 

@@ -2,6 +2,7 @@
 
 
 def total(numbers):
+    # 足し算用の箱を0から始めて、リストを左から順番に足していく。
     result = 0
     for n in numbers:
         result = result + n
